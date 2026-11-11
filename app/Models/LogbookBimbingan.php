@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class LogbookBimbingan extends Model
 {
-    //
+    protected $table = 'logbook_bimbingan';
+    protected $guarded = ['id'];
+
+    public function pengajuanPkl()
+    {
+        return $this->belongsTo(PengajuanPkl::class, 'pengajuan_id');
+    }
 }
