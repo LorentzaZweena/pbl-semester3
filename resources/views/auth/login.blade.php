@@ -26,9 +26,9 @@
             <p class="text-muted small mb-0">Silakan masuk untuk melanjutkan</p>
         </div>
 
-        @if (\$errors->any())
+        @if ($errors->any())
             <div class="alert py-2 px-3 small mb-3" style="background: #FCE9E8; color: #B94141; border-radius: 10px;">
-                <i class="bi bi-exclamation-circle me-1"></i> {{ \$errors->first() }}
+                <i class="bi bi-exclamation-circle me-1"></i> {{ $errors->first() }}
             </div>
         @endif
 
