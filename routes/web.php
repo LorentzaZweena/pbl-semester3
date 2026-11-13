@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PengajuanPklController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +37,6 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
 Route::middleware(['auth', 'role:pembimbing_industri'])->prefix('industri')->name('industri.')->group(function () {
     Route::get('/dashboard', fn() => view('dashboard.industri'))->name('dashboard');
 });
+
+Route::get('/mahasiswa/pengajuan', [PengajuanPklController::class, 'index'])->name('mahasiswa.pengajuan');
+Route::post('/mahasiswa/pengajuan', [PengajuanPklController::class, 'store'])->name('mahasiswa.pengajuan.store');

@@ -27,7 +27,7 @@
         <a href="{{ route('mahasiswa.dashboard') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.dashboard') ? 'active' : '' }}">
             <i class="bi bi-grid-1x2-fill"></i> Dashboard
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.pengajuan') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.pengajuan*') ? 'active' : '' }}">
             <i class="bi bi-file-earmark-plus"></i> Pengajuan PKL
         </a>
         <a href="#" class="nav-link-custom">
