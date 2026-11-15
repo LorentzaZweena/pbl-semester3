@@ -75,4 +75,22 @@ class PengajuanPklController extends Controller
 
         return redirect()->route('mahasiswa.pengajuan')->with('success', 'Pengajuan PKL berhasil dikirim dan sedang menunggu verifikasi Admin Prodi.');
     }
+
+    public function direktori()
+    {
+        $dosenList = DB::table('dosen')
+            ->orderBy('nama_lengkap')
+            ->get();
+
+        $instansiList = DB::table('instansi_mitra')
+            ->orderBy('nama_perusahaan')
+            ->get();
+
+        $bidangList = DB::table('instansi_mitra')
+            ->whereNotNull('bidang_industri')
+            ->distinct()
+            ->pluck('bidang_industri');
+
+        return view('mahasiswa.direktori', compact('dosenList', 'instansiList', 'bidangList'));
+    }
 }

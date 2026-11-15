@@ -30,10 +30,10 @@
         <a href="{{ route('mahasiswa.pengajuan') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.pengajuan*') ? 'active' : '' }}">
             <i class="bi bi-file-earmark-plus"></i> Pengajuan PKL
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.logbook') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.logbook*') ? 'active' : '' }}">
             <i class="bi bi-journal-text"></i> Logbook
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.direktori') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.direktori') ? 'active' : '' }}">
             <i class="bi bi-people"></i> Bimbingan
         </a>
         <a href="#" class="nav-link-custom">
