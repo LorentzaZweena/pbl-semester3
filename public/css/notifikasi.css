@@ -1,0 +1,110 @@
+
+    .outer-panel {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem 1.75rem;
+        box-shadow: 0 2px 10px rgba(23, 54, 93, 0.03);
+    }
+
+    .filter-pill-btn {
+        padding: 0.45rem 1.1rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1.5px solid var(--border-color);
+        background: #FFFFFF;
+        color: var(--text-muted);
+        transition: all 0.2s ease;
+    }
+
+    .filter-pill-btn:hover {
+        border-color: var(--blue);
+        color: var(--navy);
+    }
+
+    .filter-pill-btn.active {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: #FFFFFF;
+    }
+
+    .notif-list-box {
+        background: #FAFBFD;
+        border: 1.5px solid var(--border-color);
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .notif-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1.15rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+        transition: background 0.2s ease;
+        position: relative;
+    }
+
+    .notif-row:last-child {
+        border-bottom: none;
+    }
+
+    .notif-row:hover {
+        background: #FFFFFF;
+    }
+
+    .notif-row.unread {
+        background: #F2F7FD;
+    }
+
+    .notif-row.unread::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--navy);
+    }
+
+    .notif-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    .notif-title {
+        font-weight: 700;
+        font-size: 0.96rem;
+        color: #278052; 
+        margin-bottom: 0.15rem;
+    }
+
+    .notif-title.warning { color: #A86D12; }
+    .notif-title.danger  { color: #B94141; }
+    .notif-title.info    { color: var(--navy); }
+
+    .btn-lihat-detail {
+        background: #6B9E78;
+        color: #FFFFFF;
+        font-weight: 600;
+        font-size: 0.83rem;
+        padding: 0.45rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-lihat-detail:hover {
+        background: #278052;
+        color: #FFFFFF;
+        transform: translateY(-1px);
+    }

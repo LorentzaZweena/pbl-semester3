@@ -36,7 +36,7 @@
         <a href="{{ route('mahasiswa.direktori') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.direktori') ? 'active' : '' }}">
             <i class="bi bi-people"></i> Bimbingan
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.dokumen') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.dokumen*') ? 'active' : '' }}">
             <i class="bi bi-folder2-open"></i> Dokumen
         </a>
         <a href="#" class="nav-link-custom">
@@ -68,10 +68,10 @@
         </div>
 
         <div class="d-flex align-items-center gap-3">
-            <button class="btn btn-light btn-sm rounded-circle position-relative border" style="width: 36px; height: 36px;">
+            <a href="{{ route('mahasiswa.notifikasi') }}" class="btn btn-light btn-sm rounded-circle position-relative border d-inline-flex align-items-center justify-content-center" style="width: 36px; height: 36px;" title="Notifikasi">
                 <i class="bi bi-bell"></i>
                 <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-            </button>
+            </a>
             <button class="btn btn-light btn-sm rounded-circle border" style="width: 36px; height: 36px;">
                 <i class="bi bi-chat-left-text"></i>
             </button>
