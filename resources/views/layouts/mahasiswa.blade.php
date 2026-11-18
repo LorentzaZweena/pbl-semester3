@@ -42,18 +42,16 @@
         <a href="#" class="nav-link-custom">
             <i class="bi bi-file-earmark-check"></i> Laporan
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.profil') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.profil*') ? 'active' : '' }}">
             <i class="bi bi-person-circle"></i> Profil
         </a>
     </div>
 
     <div class="sidebar-footer">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2 fw-semibold" style="color: #F87171;">
-                <i class="bi bi-box-arrow-left"></i> Logout
-            </button>
-        </form>
+        <button type="button"
+                class="btn btn-link text-decoration-none p-0 d-flex align-items-center gap-2 fw-semibold w-100" style="color: #F87171;" data-bs-toggle="modal" data-bs-target="#modalKonfirmasiLogout">
+            <i class="bi bi-box-arrow-left fs-5"></i> Logout
+        </button>
     </div>
 </aside>
 
@@ -96,5 +94,36 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @stack('scripts')
+
+<div class="modal fade" id="modalKonfirmasiLogout" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+        <div class="modal-content border-0 rounded-4 shadow-lg text-center p-4">
+            <div class="modal-body p-2">
+                <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
+                     style="width: 68px; height: 68px; background: #FCE9E8; color: #B94141;">
+                    <i class="bi bi-box-arrow-right fs-2"></i>
+                </div>
+
+                <h4 class="fw-bold mb-1" style="color: var(--text-dark);">Konfirmasi Keluar</h4>
+                <p class="text-muted small mb-4">Apakah Anda yakin ingin keluar dari aplikasi SIM-PKL?</p>
+
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn fw-semibold py-2 rounded-3" style="border: 1.5px solid #278052; color: #278052; background: #FFFFFF;" data-bs-dismiss="modal">
+                        Batal
+                    </button>
+
+                    <form action="{{ route('logout') }}" method="POST" class="d-grid">
+                        @csrf
+                        <button type="submit"
+                                class="btn fw-semibold py-2 rounded-3 text-white"
+                                style="background: linear-gradient(135deg, #4B7F58 0%, #278052 100%); border: none;">
+                            Keluar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -5,6 +5,7 @@ use App\Http\Controllers\PengajuanPklController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\DokumenPklController;
 use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\ProfilMahasiswaController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,3 +59,9 @@ Route::post('/mahasiswa/dokumen/repository', [DokumenPklController::class, 'stor
 Route::get('/mahasiswa/notifikasi', [NotifikasiController::class, 'index'])->name('mahasiswa.notifikasi');
 
 Route::post('/mahasiswa/notifikasi/read-all', [NotifikasiController::class, 'markAllRead'])->name('mahasiswa.notifikasi.readAll');
+
+Route::get('/mahasiswa/profil', [ProfilMahasiswaController::class, 'index'])->name('mahasiswa.profil');
+
+Route::post('/mahasiswa/profil/update', [ProfilMahasiswaController::class, 'update'])->name('mahasiswa.profil.update');
+
+Route::post('/mahasiswa/profil/password', [ProfilMahasiswaController::class, 'updatePassword'])->name('mahasiswa.profil.password');
