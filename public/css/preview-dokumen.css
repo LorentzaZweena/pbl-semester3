@@ -1,0 +1,122 @@
+
+    .preview-pane {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(23, 54, 93, 0.03);
+    }
+
+    .paper-viewport {
+        background: #E9EEF5;
+        border-radius: 12px;
+        padding: 1.5rem;
+        max-height: 76vh;
+        overflow-y: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Lembar Kertas Resmi A4 */
+    .a4-sheet {
+        background: #FFFFFF;
+        width: 100%;
+        max-width: 720px;
+        min-height: 920px;
+        padding: 2.5rem 2.75rem;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+        color: #1A202C;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 11.5pt;
+        line-height: 1.45;
+        transition: all 0.25s ease;
+    }
+
+    .a4-sheet.landscape-mode {
+        max-width: 960px;
+        min-height: 680px;
+    }
+
+    .kop-surat {
+        border-bottom: 3px double #17365D;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .rekap-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 1.25rem;
+        font-size: 10.5pt;
+    }
+
+    .rekap-table th, .rekap-table td {
+        border: 1px solid #333;
+        padding: 8px 10px;
+    }
+
+    .rekap-table th {
+        background-color: #F1F5F9;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .settings-card {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(23, 54, 93, 0.03);
+        position: sticky;
+        top: 85px;
+    }
+
+    .btn-download-pdf {
+        background: #278052;
+        color: #FFFFFF;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 0.65rem 1rem;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-download-pdf:hover {
+        background: #1E6641;
+        color: #FFFFFF;
+    }
+
+    .btn-print-doc {
+        background: var(--navy);
+        color: #FFFFFF;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 0.65rem 1rem;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+    .btn-print-doc:hover {
+        background: var(--blue);
+        color: #FFFFFF;
+    }
+
+    @media print {
+        body * {
+            visibility: hidden;
+        }
+        #dokumenRekapArea, #dokumenRekapArea * {
+            visibility: visible;
+        }
+        #dokumenRekapArea {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            max-width: 100% !important;
+            box-shadow: none !important;
+            padding: 1.5cm !important;
+            margin: 0 !important;
+        }
+    }

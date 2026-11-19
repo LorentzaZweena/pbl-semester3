@@ -6,6 +6,7 @@ use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\DokumenPklController;
 use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\ProfilMahasiswaController;
+use App\Http\Controllers\LaporanNilaiController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -65,3 +66,7 @@ Route::get('/mahasiswa/profil', [ProfilMahasiswaController::class, 'index'])->na
 Route::post('/mahasiswa/profil/update', [ProfilMahasiswaController::class, 'update'])->name('mahasiswa.profil.update');
 
 Route::post('/mahasiswa/profil/password', [ProfilMahasiswaController::class, 'updatePassword'])->name('mahasiswa.profil.password');
+
+Route::get('/mahasiswa/laporan', [LaporanNilaiController::class, 'index'])->name('mahasiswa.laporan');
+
+Route::get('/mahasiswa/laporan/pratinjau', [LaporanNilaiController::class, 'pratinjau'])->name('mahasiswa.laporan.pratinjau');

@@ -39,7 +39,7 @@
         <a href="{{ route('mahasiswa.dokumen') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.dokumen*') ? 'active' : '' }}">
             <i class="bi bi-folder2-open"></i> Dokumen
         </a>
-        <a href="#" class="nav-link-custom">
+        <a href="{{ route('mahasiswa.laporan') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.laporan*') ? 'active' : '' }}">
             <i class="bi bi-file-earmark-check"></i> Laporan
         </a>
         <a href="{{ route('mahasiswa.profil') }}" class="nav-link-custom {{ request()->routeIs('mahasiswa.profil*') ? 'active' : '' }}">
