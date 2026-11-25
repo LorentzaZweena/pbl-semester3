@@ -8,6 +8,8 @@ use App\Http\Controllers\NotifikasiController;
 use App\Http\Controllers\ProfilMahasiswaController;
 use App\Http\Controllers\LaporanNilaiController;
 
+use App\Http\Controllers\AdminProdiController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +25,9 @@ Route::middleware(['auth', 'role:super_admin'])->prefix('super-admin')->name('su
     Route::get('/dashboard', fn() => view('dashboard.superadmin'))->name('dashboard');
 });
 
-Route::middleware(['auth', 'role:admin_prodi'])->prefix('admin-prodi')->name('adminprodi.')->group(function () {
-    Route::get('/dashboard', fn() => view('dashboard.adminprodi'))->name('dashboard');
-});
+Route::get('/admin-prodi/dashboard', [AdminProdiController::class, 'dashboard'])
+    ->middleware(['auth', 'role:admin_prodi'])
+    ->name('adminprodi.dashboard');
 
 Route::middleware(['auth', 'role:kps'])->prefix('kps')->name('kps.')->group(function () {
     Route::get('/dashboard', fn() => view('dashboard.kps'))->name('dashboard');
@@ -70,3 +72,12 @@ Route::post('/mahasiswa/profil/password', [ProfilMahasiswaController::class, 'up
 Route::get('/mahasiswa/laporan', [LaporanNilaiController::class, 'index'])->name('mahasiswa.laporan');
 
 Route::get('/mahasiswa/laporan/pratinjau', [LaporanNilaiController::class, 'pratinjau'])->name('mahasiswa.laporan.pratinjau');
+
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:admin_prodi'])->group(function () {
+    Route::get('/dashboard', [AdminProdiController::class, 'dashboard'])->name('dashboard');
+    Route::get('/pengajuan', [AdminProdiController::class, 'pengajuan'])->name('pengajuan');
+    Route::post('/pengajuan/{id}/verifikasi', [AdminProdiController::class, 'verifikasiPengajuan'])->name('pengajuan.verifikasi');
+    Route::get('/dosen', [AdminProdiController::class, 'dosen'])->name('dosen');
+    Route::post('/dosen/{nip}/kuota', [AdminProdiController::class, 'updateKuotaDosen'])->name('dosen.kuota');
+    Route::get('/monitoring', [AdminProdiController::class, 'monitoring'])->name('monitoring');
+});

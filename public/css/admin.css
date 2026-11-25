@@ -1,0 +1,113 @@
+
+        :root {
+            --navy: #17365D;
+            --sidebar-bg: #1B2A41;
+            --blue: #315D8B;
+            --soft-blue: #93B4D8;
+            --pale-blue: #D9E6F5;
+            --bg-main: #F5F8FC;
+            --border-color: #D9E2ED;
+            --text-dark: #26364A;
+            --text-muted: #64748B;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            width: 260px;
+            min-height: 100vh;
+            background: var(--sidebar-bg);
+            color: #FFFFFF;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem 1.35rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+        }
+
+        .sidebar-menu {
+            padding: 1.25rem 0.85rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .nav-link-custom {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.78);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.92rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link-custom:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFFFFF;
+        }
+
+        .nav-link-custom.active {
+            background: #3B5270;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .sidebar-footer {
+            padding: 1.15rem 1.35rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .main-wrapper {
+            margin-left: 260px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar {
+            height: 70px;
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+
+        .content-area {
+            padding: 1.75rem 2rem;
+            flex-grow: 1;
+        }

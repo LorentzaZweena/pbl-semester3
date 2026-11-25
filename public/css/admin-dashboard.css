@@ -1,0 +1,29 @@
+
+    .stat-card {
+        background: #FFFFFF;
+        border: 1.5px solid var(--border-color);
+        border-radius: 14px;
+        padding: 1.25rem 1.4rem;
+        transition: all 0.2s ease;
+    }
+    .stat-card:hover {
+        border-color: var(--soft-blue);
+        transform: translateY(-2px);
+    }
+    .outer-panel {
+        background: #FFFFFF;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem 1.75rem;
+    }
+    .btn-navy {
+        background: var(--navy);
+        color: #FFFFFF;
+        font-weight: 600;
+        border-radius: 8px;
+        font-size: 0.82rem;
+    }
+    .btn-navy:hover {
+        background: var(--blue);
+        color: #FFFFFF;
+    }
