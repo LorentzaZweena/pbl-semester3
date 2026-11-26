@@ -1,120 +1,106 @@
 
         :root {
-            --navy: #17365D;
-            --blue: #315D8B;
-            --soft-blue: #8BAED6;
-            --pale-blue: #EAF2FC;
-            --bg-main: #F5F8FC;
-            --border-color: #D9E2ED;
-            --text-dark: #26364A;
-            --text-muted: #6D7D90;
+            --navy: #2D3E56;
+            --navy-hover: #1E2C40;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border-input: #CBD5E1;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             min-height: 100vh;
-            background: linear-gradient(rgba(245, 248, 252, 0.78), rgba(234, 242, 252, 0.85)),
-                url('../images/gedung-pnj.jpg') center/cover no-repeat;
+            margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-dark);
-        }
-
-        .login-wrapper {
-            width: 100%;
-            max-width: 440px;
-            padding: 1rem;
-        }
-
-        .brand-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .brand-logo {
-            width: 58px;
-            height: 58px;
-            background: var(--navy);
-            color: #fff;
-            border-radius: 16px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            box-shadow: 0 8px 20px rgba(23, 54, 93, 0.25);
-            margin-bottom: 0.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(180deg, rgba(241, 245, 249, 0.72) 0%, rgba(226, 232, 240, 0.82) 100%),
+            url("../images/gedung-pnj.jpg") center/cover no-repeat fixed;
+            background-color: #DCE5EE;
         }
 
         .login-card {
+            width: 100%;
+            max-width: 440px;
             background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(23, 54, 93, 0.12);
+            padding: 2.5rem 2.25rem;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
         }
 
-        /* Role Switcher Tab sesuai Figma */
-        .role-switcher {
-            background: #EEF2F7;
-            padding: 4px;
-            border-radius: 12px;
-            display: flex;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-
-        .role-btn {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 0.6rem;
-            border-radius: 9px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            transition: all 0.25s ease;
-        }
-
-        .role-btn.active {
-            background: var(--navy);
+        .brand-badge {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: #17365D;
             color: #FFFFFF;
-            box-shadow: 0 4px 10px rgba(23, 54, 93, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 18px rgba(23, 54, 93, 0.22);
         }
 
-        .form-control {
-            border: 1.5px solid var(--border-color);
+        .form-label-custom {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.45rem;
+        }
+
+        .form-control-custom, .form-select-custom {
+            height: 46px;
             border-radius: 10px;
-            padding: 0.7rem 0.9rem;
-            font-size: 0.92rem;
+            border: 1.5px solid var(--border-input);
+            font-size: 0.9rem;
+            padding: 0.6rem 0.95rem;
+            color: var(--text-dark);
+            transition: all 0.2s ease;
+        }
+
+        .form-control-custom:focus, .form-select-custom:focus {
+            border-color: #315D8B;
+            box-shadow: 0 0 0 4px rgba(49, 93, 139, 0.12);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .btn-toggle-pass {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: #475569;
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .btn-toggle-pass:hover {
             color: var(--text-dark);
         }
 
-        .form-control:focus {
-            border-color: var(--blue);
-            box-shadow: 0 0 0 3px rgba(49, 93, 139, 0.15);
-        }
-
-        .input-group-text {
-            background: #FFFFFF;
-            border: 1.5px solid var(--border-color);
-            color: var(--text-muted);
-        }
-
-        .btn-navy {
+        .btn-login-submit {
+            height: 46px;
             background: var(--navy);
             color: #FFFFFF;
             font-weight: 600;
-            padding: 0.75rem;
+            font-size: 0.95rem;
             border-radius: 10px;
             border: none;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
         }
 
-        .btn-navy:hover {
-            background: var(--blue);
+        .btn-login-submit:hover {
+            background: var(--navy-hover);
             color: #FFFFFF;
             transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(23, 54, 93, 0.25);
+            box-shadow: 0 8px 18px rgba(45, 62, 86, 0.25);
         }
